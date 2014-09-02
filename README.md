@@ -6,7 +6,7 @@ It has a basic configuration for a namespace "db" that is is set to ```/var/aero
 This file is configured to be mounted via a volume and is optimized for SSD drives (and we're running the SSD
 backed engine for Aerospike).
 
-# How to Build
+## How to Build
 
 Either run a build command like so:
 
@@ -26,6 +26,16 @@ make build
 
 To run, simply create a directory where you want to keep the Aerospike logs and data and run like so:
 
+```
+sudo docker run --rm -v /var/aerospike:/var/aerospike andrewcrosio/aerospike-docker
+```
+
+Ensuring that the directory you are mounting the volume machine on the host actually exists.
+
+Or use the Makefile command:
+
+```
+make run
 ```
 
 
